@@ -3,7 +3,7 @@ name: Publicar NDImages
 on:
   push:
     branches: [main]
-    paths: [ndimages-pages.zip, .github/workflows/pages.yml]
+    paths: [ndimages-pages.zip, google15ccb04d661c0411.html, .github/workflows/pages.yml]
   workflow_dispatch:
 
 permissions:
@@ -23,6 +23,7 @@ jobs:
       - name: Preparar os arquivos públicos
         run: |
           unzip -q ndimages-pages.zip -d site
+          cp -- google15ccb04d661c0411.html site/
           test -f site/index.html
           test -f site/criar-colagem/index.html
           test -f site/sitemap.xml
